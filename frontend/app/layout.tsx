@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/sonner';
 import { AuthProvider } from '@/components/providers/auth-provider';
 
 const inter = localFont({
-  src: '../public/fonts/Inter-Regular.woff2',
+  src: './fonts/Inter-Regular.woff2',
   variable: '--font-inter',
   display: 'swap',
 });
