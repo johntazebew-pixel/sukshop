@@ -27,18 +27,12 @@ async function bootstrap() {
     }),
   );
 
-  app.enableCors({
-    origin: [
-      'http://localhost:3001',
-      'http://localhost:3000',
-      'http://127.0.0.1:3001',
-      'http://127.0.0.1:3000',
-      'https://your-vercel-url.vercel.app',
-    ],
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'x-session-id'],
-  });
+app.enableCors({
+  origin: true, // This reflects the request origin, allowing Vercel
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-session-id'],
+});
 
   const port = process.env.PORT || 3000;
   await app.listen(port, '0.0.0.0');
